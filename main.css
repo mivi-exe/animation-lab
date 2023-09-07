@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Fugaz+One&display=swap');
+
+/**Loading Screen Animations**/
+.overlay {
+    background-color:rgb(33, 29, 90);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bunny-load {
+    height: 10%;
+    width: auto;
+}
+
+.underlay {
+    height: 100vh;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+    background-color: rgb(33, 29, 90);
+    background-image: url(assets/spirited-away.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+    background-size: cover;
+    backdrop-filter: blur(6px);
+}
+
+
+h1 {
+    font-family: 'Fugaz One', cursive;
+    color: rgb(255, 240, 213)
+}
+
+p {
+    font-size: 1.1rem;
+    color: rgb(255, 246, 254);
+    text-shadow: 2px 2px 2px rgba(38, 5, 53, 0.281);
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.516);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.title {
+    font-size: 360%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-bottom: 3%;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1%;
+    padding-bottom: 2%;
+    padding-top: none;
+    font-size: 120%;
+}
+
+a {
+    color: rgb(255, 221, 252);
+    text-decoration: none;
+    padding: 0.8%;
+    font-size: 110%;   
+}
+
+a:visited{
+    color: rgb(238, 195, 255);
+}
+
+a:hover{
+    color: rgb(255, 242, 254);
+    text-decoration: ;
+    border-radius: 2px;
+    border-radius: 10px;
+}
+
+main {
+    max-width: 100%;
+    height: 100%;
+    min-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat( 1fr);
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+    padding: 3%;
+}
+
+.item {
+    background-color: rgba(230, 221, 255, 0.486);
+    border-radius: 10px;
+    display: block;
+    line-height: 130%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item img {
+    max-height: 90%;
+    max-width: 90%;
+    border-radius: 12px;
+    color: rgb(245, 241, 255);
+    margin-top: 4%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+}
+
+.item h1 {
+    font-family: 'Fugaz One', cursive;
+    color: rgb(255, 241, 230);
+    font-size: 1.7rem;
+    padding-left: 5%;
+    margin-bottom: 2%;
+}
+
+.item p {
+    margin-top: 1%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@media (min-width: 700px) {
+    nav {
+        font-size: 1.6em;
+        margin-bottom: -0.2em;
+    }
+}
+
+
+@media (min-width: 1100px) {
+    .title {
+        font-size: 5em;
+    }
+
+    nav {
+        margin-bottom: -0.6em;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1fr);
+        grid-column-gap: 3rem;
+        grid-row-gap: 3rem;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    header h1{
+        margin-top: 0.8%;
+        margin-bottom: 1.2%;
+    }
+    nav {
+        font-size: 2.2rem;
+    }
+
+}
+
+/** IN PAGE ANIMATIONS**/
+/**I struggled a bit with animations so I tried to see different examples of how people did their animations online and tried to recreate theirs. I'm not sure what format is best or ideal yet, I'm just testing waters and playing around**/
+.overlay {
+    -webkit-animation: fade-out 1s ease-out 6s both;
+            animation: fade-out 1s ease-out 6s both;
+}
+
+ @-webkit-keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      height: 0vh;
+    }
+  }
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      height: 0vh;
+    }
+  }
+  
+
+.bunny-load {
+    -webkit-animation: loader 6s ease-in-out both;
+            animation: loader 6s ease-in-out both;
+}
+
+ @-webkit-keyframes loader {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  }
+
+
+.item {
+	-webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 6.5s both;
+	        animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) 6.5s both;
+}
+
+ @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+.underlay {
+    animation: underlayup 100ms 1 linear;
+    animation-delay: 6s;
+}
+
+@keyframe underlayup {
+    0% {
+        height: 0vh;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+    }
+    100% {
+        height: 100vh;
+        width: 100vh;
+    }
+}
+
+
+.title:hover  {
+  background-image: linear-gradient(
+    -225deg,
+    #fffb96 0%,
+    #fc9ebd 20%,
+    #c5a4e9 35%,
+    #fc9ebd 70%,
+    #fffb96 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 3s linear infinite;
+}
+
+@keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+
+.img-animate:hover {
+    -webkit-animation: shadow-drop 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: shadow-drop 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.nav-animate:hover {
+    -webkit-animation: shadow-drop 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: shadow-drop 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes shadow-drop {
+    0% {
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translateZ(50px);
+                transform: translateZ(50px);
+        -webkit-box-shadow: 0 0 20px 0px rgba(214, 143, 255, 0.35);
+                box-shadow: 0 0 20px 0px rgba(141, 74, 180, 0.527);
+    }
+}
